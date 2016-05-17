@@ -1,0 +1,30 @@
+package org.dailytasks.may16;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+public class MaxNumber {
+	public static void main(String[] args) {
+
+		Scanner sc  = new Scanner(System.in);
+		System.out.println("Enter Number:");
+		Long num = sc.nextLong();
+		List<Long> list = new ArrayList<Long>();
+		String str = num.toString();
+		for(int i=0;i<str.length();i++){
+			long temp = Character.getNumericValue(str.charAt(i));
+			list.add(temp);
+		}
+		Collections.sort(list);
+		System.out.println("Maximum Number That Can be Formed By The Above Number:");
+		Object arr[]=list.toArray();
+		Long max[] = new Long[arr.length];
+		for(int i=arr.length-1,j=0;i>0;i--,j++){
+			max[j]=(Long)arr[i];
+			System.out.print(max[j]);
+		}
+	}
+}
+
