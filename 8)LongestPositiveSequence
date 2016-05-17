@@ -1,0 +1,45 @@
+package org.dailytasks.may16;
+
+import java.util.Scanner;
+import java.util.SortedMap;
+import java.util.TreeMap;
+
+public class LongestPositiveSequence {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Length Of the Array:");
+		int n = sc.nextInt();
+		int arr[] = new int[20];
+		System.out.println("Enter Array Elements:");
+		for(int i=0;i<n;i++)
+			arr[i] = sc.nextInt();
+		SortedMap<Integer,StringBuffer> mp = new TreeMap<Integer,StringBuffer>();
+		int count=0;
+		StringBuffer sb = new StringBuffer();
+		sb.append("[");
+		for(int i=0;i<n;i++){
+			if(arr[i]>=0){
+				count++;
+				sb.append(+arr[i]+",");
+			}
+			else if(arr[i]<0){
+				sb.append("]");
+				mp.put(count,sb);
+				sb = null;
+				sb = new StringBuffer();
+				sb.append("[");
+				count=0;
+			}
+			if(i==n-1){
+				sb.append("]");
+				mp.put(count,sb);
+				sb = null;
+				count=0;
+			}
+		}
+		System.out.println("Count:-"+mp.lastKey());
+		System.out.println("Longest Positive Sequence:-"+mp.get(mp.lastKey()));
+	}
+}
+
