@@ -1,0 +1,46 @@
+package org.dailytasks.may16;
+
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+import java.util.Set;
+
+public class DuplicateElements {
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter length of the Array:");
+		int n = sc.nextInt();
+		int arr[] =  new int[n];
+		System.out.println("Enter Array Elements:");
+		for(int i=0;i<n;i++)
+			arr[i] = sc.nextInt(); 
+		Map<Integer,Integer> mp = new Hashtable<Integer,Integer>();
+		int dupcount=0;
+		for(int num : arr){
+			int cnt=0;
+			if(mp.containsKey(num)){
+				cnt = mp.get(num).intValue();
+				mp.put(num,++cnt);
+			}
+			else
+				mp.put(num,1);
+		}
+		System.out.println(mp);
+		System.out.println("Duplicate Elements in array are:");
+		Set<Entry<Integer,Integer>> st = mp.entrySet();
+		Iterator<Entry<Integer,Integer>> ie = st.iterator();
+		
+		while(ie.hasNext()){
+			Entry<Integer,Integer> en = ie.next();
+			if(en.getValue()>1){
+					dupcount++;
+					System.out.print(en.getKey()+"  ");
+			}
+		}
+		System.out.println("\nTotal Count:-"+dupcount);
+	}
+}
+
