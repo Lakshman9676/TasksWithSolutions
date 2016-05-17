@@ -1,0 +1,30 @@
+Write a program to read a paragraph and count all the occurrences of each word.
+Write a program to find the frequency of each character for a given string.
+Write a program to read input as a sequence and append Z to the left for every word which ends with letter ‘e’. 
+Input: He has ease and pleases.
+Output: HZe has easZe and please.
+Write a program to read list of integers and pick all the numbers whose sum of the digits up to last fold 9.
+e.g.: 567=18=9;
+5) A file is given which consists of 3 columns: date, city and temperature.       For ex:
+Date 		City 		Temperature
+09-11-2015 Delhi		45
+09-11-2015 Bangalore  	24
+09-11-2015 Ranchi		28
+And it should support following type of queries..
+What is the temperature of Bangalore on 9th November?
+Give 5 hottest/coldest cities name on 9th November.
+6) Find the second most repeating number in an array without using extra storage.
+E.G:[6,8,1,2,6,3,6,2,3,2,6] 
+7) Given an integer, find the maximum number that can be formed from the digits.
+Input: 8754365 outputs: 8765543
+8) Find the longest running positive sequence in an array.
+E.G : [1,2,-3,2,3,4,-6,1,2,3,4,5,-8,5,6]
+It should return 5, with start index: 1 and ends at 5.
+9) Write a program to test whether string s2 is obtained by rotating the string s1 by 2 places.
+E.G: s1 =”eagles” s2=”elesag” return true
+S1= “quality” s2=”lityqua” return false
+10) Write a program to find duplicate elements in array and total count of duplicate elements.’
+E.G : array ={5,3,4,6,7,5,3,2,1} 
+Duplicate elements: - 5, 3
+Total duplicate count: - 2
+
