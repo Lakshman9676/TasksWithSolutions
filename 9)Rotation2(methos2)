@@ -1,0 +1,43 @@
+package org.dailytasks.may16;
+
+import java.util.Scanner;
+
+public class Rotation2 {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Strings:s1 and s2");
+		String s1 = sc.next();String s2 = sc.next();
+		String s3 = s1 + s1;
+		boolean val;
+		if(s2.length()<s1.length())
+				val = false;
+		else
+				val =Rotation2.check(s3,s2);
+		System.out.println(val);
+	}
+
+	public static boolean check(String s3, String s2) {
+		int olen = s3.length();
+		int clen = s2.length();
+		int i=0,j=0;
+		boolean found = false;
+		for(;j<clen && i<= olen - clen;++i){
+			int k = i;
+			while(s3.charAt(k) == s2.charAt(j)){
+				k++;
+				j++;
+				if(k == olen || j == clen){
+					found = true;
+					break;
+				}
+			}
+			if(found)
+				break;
+			else 
+				j = 0;
+		}
+		return found;
+	}
+}
+
